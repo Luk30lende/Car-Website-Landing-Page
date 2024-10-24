@@ -3,24 +3,23 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
+  --header-height: 56px;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --orange-color: hsl(36, 90%, 54%);
-  --green-color: hsl(166, 90%, 40%);
-  --blue-color: hsl(204, 90%, 50%);
-  --white-color: hsl(0, 0%, 100%);
-  --black-color: hsl(210, 8%, 8%);
+  --orange-color: #f39f20;
+  --green-color: #0ac297;
+  --blue-color: #0d96f2;
+  --white-color: #ffffff;
+  --black-color: #131416;
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
   --second-font: "Dancing Script", cursive;
-  --biggest-font-size: 5rem;
-  --big-font-size: 2rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
+  --biggest-font-size: 80px;
+  --big-font-size: 32px;
+  --normal-font-size: 15px;
+  --small-font-size: 13px;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -35,10 +34,10 @@
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 1150px) {
   :root {
-    --biggest-font-size: 15rem;
-    --big-font-size: 6rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
+    --biggest-font-size: 240px;
+    --big-font-size: 96px;
+    --normal-font-size: 16px;
+    --small-font-size: 14px;
   }
 }
 
@@ -72,7 +71,7 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
-  margin-inline: 1.5rem;
+  margin-inline: 24px;
 }
 
 .main {
@@ -92,10 +91,68 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--orange-color);
+  z-index: var(--z-fixed);
+}
 
+.nav{
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo, .nav__link{
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.nav__toggle, .nav__close{
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--white-color);
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav__menu{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: rgba(19, 20, 22, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  width: 80%;
+  height: 100%;
+  padding: 112px 56px 56px;
+  transition: right .4s;
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+
+.nav__close{
+  position: absolute;
+  top: 12px;
+  right: 24px;
+}
 
 /* Show menu */
-
+.show-menu{
+  right: 0;
+}
 
 /* Add blur header */
 
