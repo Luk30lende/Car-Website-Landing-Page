@@ -215,6 +215,9 @@ img {
   position: absolute;
   left: 0;
   bottom: -128px;
+  transform: translateX(160px);
+  opacity: 0;
+  transition: transform .8s .3s, opacity .4s .3s;
 }
 
 .home__info{
@@ -287,10 +290,38 @@ img {
 }
 
 /* Swiper class */
+.swiper{
+  height: 100vh;
+}
 
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+  top: 65%;
+  bottom: initial;
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.swiper-pagination-bullet{
+  width: 32px;
+  height: 32px;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--white-color);
+  opacity: 1;
+  align-content: center;
+  background: none;
+}
+
+.swiper-pagination-bullet-active{
+  border: 2px solid var(--white-color);
+}
 
 /* Swiper animation */
-
+.swiper-slide-active .home__img{
+  transform: translateX(0);
+  opacity: 1;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
